@@ -11,6 +11,7 @@ characters = len(sentence)
 start = 2
 
 breaker = False
+point_of_no_return = False
 
 #The for loop is used to go through all of the indexes of the sentence that the user writes without turning it into a list.
     #If the sentence is turned into a list, then all of the characters in the sentence that are the same (i.e the same letters) will all count as the same index, thus ruining the encryption. 
@@ -24,6 +25,9 @@ for repetitions in range(len(sentence)):
         else:
             final_word.append(alphabet[alphabet.index(sentence[repetitions]) - 3])
         
+        if sentence[repetitions] == sentence[len(sentence) - 2]:
+            point_of_no_return = True
+
         start += 3
         
         #used for test purposes
@@ -48,11 +52,14 @@ for repetitions in range(len(sentence)):
     
     #This if statement is the easiest to understand as it breaks the loop when the number in the characters variable can't be divided by 3 anymore (not giving an integer which isn't 0). 
     elif (characters // 3) == 0:
-        if characters == 2:
+        if characters == 2 and point_of_no_return == False:
             final_word.append(alphabet[alphabet.index(sentence[len(sentence) - 1]) - 3])
+        elif characters == 2 and point_of_no_return == True:
+            final_word.append(sentence[len(sentence) - 1])
+        
         break
     
     characters -= 1
-    print(characters)
+    #print(characters)
 
 print("Your encoded sentence is:", "".join(final_word))
