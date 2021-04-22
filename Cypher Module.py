@@ -1,14 +1,29 @@
 #Ceaser's Cypher Code Project
+import re
 
 alphabet = "abcdefghijklmnopqrstuvwxynz"
 
 sentence = input("Write what you want to encrypt here: ").lower()
 final_word = []
-changed_letters = []
+#changed_letters = []
+#first_char = ""
+
+#first_index = sentence.find(first_char, 0)
 
 characters = len(sentence)
 
+#test = []
+
 start = 2
+
+#for i in range(len(sentence)):
+    #if sentence[i] == sentence[start]:
+        #if i == start:
+            #test.append(alphabet[alphabet.index(sentence[i]) - 3])
+        #else:
+            #test.append(sentence[i])
+    #else:
+        #test.append(sentence[i])
 
 breaker = False
 point_of_no_return = False
