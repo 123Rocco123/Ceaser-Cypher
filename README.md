@@ -1,5 +1,7 @@
 # Ceaser Cypher
- The program will apply the Ceaser Cypher to the text that you insert. It will also decypher the encoded text that you write.
+ The program will apply the Ceaser Cypher to the text that you insert. It will also decypher the encoded text that you write. 
+ 
+ The encryption method is that every third letter in each word is changed to the letter which is 3 digits to the left of it on the alphabet, instead of changing all of the characters in the word. 
  
  This project has been completed. 
 
